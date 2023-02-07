@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { type } from '@testing-library/user-event/dist/type';
+import { log } from 'console';
+import * as React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export interface IAppProps {
 }
 
-export default App;
+let color:string='red'
+let year:number= 2020
+
+//!tupel
+let mySexToy:[x:number,y:boolean,z:string] =[5,true,'my pip']
+
+export default function App(props: IAppProps) {
+
+ console.log(mySexToy[0]);
+ 
+ 
+  return (
+    <>
+      <div>
+        HELLO WOLRD
+      </div>
+    </>
+  );
+}
