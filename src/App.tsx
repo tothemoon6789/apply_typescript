@@ -1,26 +1,26 @@
-import { type } from '@testing-library/user-event/dist/type';
-import { log } from 'console';
 import * as React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HomeTemplate from './pages/HomeTemplate';
 
-export interface IAppProps {
+interface IAppProps {
 }
 
-let color:string='red'
-let year:number= 2020
-
-//!tupel
-let mySexToy:[x:number,y:boolean,z:string] =[5,true,'my pip']
-
-export default function App(props: IAppProps) {
-
- console.log(mySexToy[0]);
- 
- 
+const App: React.FunctionComponent<IAppProps> = (props) => {
   return (
     <>
-      <div>
-        HELLO WOLRD
-      </div>
+      <BrowserRouter>
+        <Routes>
+
+          <Route path='' element={<HomeTemplate />}>
+            <Route index element={<h1>HOME</h1>}></Route>
+            <Route path='/contact' element={<h1>CONTACT</h1>}></Route>
+            <Route path='/product' element={<h1>PROPDUCT</h1>}></Route>
+          </Route>
+
+        </Routes>
+      </BrowserRouter>
     </>
   );
-}
+};
+
+export default App;
